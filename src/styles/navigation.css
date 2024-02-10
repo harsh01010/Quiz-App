@@ -1,0 +1,36 @@
+.navigationBox {
+    height: 60px;
+    width: 50px;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    box-sizing: border-box;
+    padding-top: 20px;
+    cursor: pointer;
+}
+
+.blue {
+    background-color: blue;
+    color: wheat;
+}
+
+.green {
+    background-color: green;
+    color: wheat;
+}
+
+.red {
+    background-color: red;
+}
+
+.navigation {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr 1fr; */
+    gap: 40px;
+    margin: auto;
+    margin-top: 0px;
+    overflow: auto;
+}

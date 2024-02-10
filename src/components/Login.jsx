@@ -4,9 +4,9 @@ import "../styles/login.css";
 const details = [
   {
     id: 1,
-    name: "THOR",
-    userName: "123",
-    passWord: "123",
+    name: "Suman Dwijendra",
+    userName: "suman",
+    passWord: "29472",
   },
   {
     id: 2,

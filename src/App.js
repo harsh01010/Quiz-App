@@ -14,7 +14,6 @@ function App() {
       solved: false,
       pScore: question.marks.positive,
       nScore: question.marks.negative,
-      correctOption: question.options.some((option) => option.isCorrect)?.oNo,
       selectedOption: null,
       score: 0,
     }));

@@ -1,0 +1,95 @@
+.question {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 80px;
+    border-right: 2px solid black;
+    width: 70vw;
+}
+
+.questionDetailWithOption {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.questionDetails {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.options>ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.options>ul>li {
+    list-style: none;
+    font-size: x-large;
+    transition: all 0.8s;
+    cursor: pointer;
+}
+
+.options>ul>li:hover {
+    color: blue;
+}
+
+.radio {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    cursor: pointer;
+    /* display: none; */
+
+}
+
+.radio:checked {
+    padding: 0;
+    background-color: blue;
+}
+
+.lgtext {
+    font-size: xx-large;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.lg {
+    font-size: large;
+    margin-right: 4px;
+    text-align: center;
+}
+
+.navigationButtons {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 200px;
+    padding-left: 80px;
+    align-items: center;
+
+}
+
+.navigationButtons>button {
+    border: 1px solid black;
+    box-shadow: 0 0 8px #414141;
+    height: 35px;
+    width: 110px;
+    border-radius: 8px;
+    font-size: medium;
+    font-weight: bold;
+    transition: all 0.4s;
+}
+
+.navigationButtons>button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.navigationButtons>button:active {
+    transform: scale(1.06);
+}

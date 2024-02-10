@@ -1,13 +1,14 @@
 import Question from "./Question";
 import Navigation from "./Navigation";
 import { useState } from "react";
+import "../styles/exam.css";
 function Exam({ questions, setAnswers, answers }) {
   const [selectedQuestion, setSelectedQuestion] = useState(0);
   function handleNextPrev(x) {
     setSelectedQuestion((curr) => curr + x);
   }
   return (
-    <div>
+    <div className="exam">
       <Question
         questionDetails={questions.at(selectedQuestion)}
         total={questions.length}
@@ -15,7 +16,11 @@ function Exam({ questions, setAnswers, answers }) {
         setAnswers={setAnswers}
         answers={answers}
       />
-      <Navigation questions={questions} />
+      <Navigation
+        answers={answers}
+        selectedQuestion={selectedQuestion}
+        setSelectedQuestion={setSelectedQuestion}
+      />
     </div>
   );
 }

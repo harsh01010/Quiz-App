@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../styles/question.css";
 
 export default function Question({
   questionDetails,
@@ -11,6 +12,9 @@ export default function Question({
   function handleSelectOption(oNo) {
     setChecked(oNo);
     setAnswers(function (pastAns) {
+      const correctOption = options.filter(
+        (option) => option.isCorrect === true
+      );
       return pastAns.map((ans) =>
         ans.qNo !== qNo
           ? ans
@@ -18,7 +22,7 @@ export default function Question({
               ...ans,
               solved: true,
               selectedOption: oNo,
-              score: oNo === ans.correctOption?.oNo ? ans.pScore : ans.nScore,
+              score: oNo === correctOption[0].oNo ? ans.pScore : ans.nScore,
             }
       );
     });
@@ -32,21 +36,22 @@ export default function Question({
     },
     [qNo]
   );
-  //console.log(total, qNo);
+
   return (
-    <section>
-      <div>
-        <div>
-          <span>
-            Q no. : {qNo}
-            {"  " + summary}
+    <section className="question">
+      <div className="questionDetailWithOption">
+        <div className="questionDetails">
+          <span className="lgtext">
+            {" "}
+            {"Q." + qNo}
+            {":"} <span> {summary} </span>
           </span>
-          <span>
+          <span className="lg">
             +{marks.positive}/-{marks.negative}
           </span>
         </div>
 
-        <div>
+        <div className="options">
           <ul>
             {options.map((curr) => (
               <Option
@@ -59,7 +64,7 @@ export default function Question({
         </div>
       </div>
 
-      <div>
+      <div className="navigationButtons">
         <button disabled={qNo <= 1} onClick={() => handleNextPrev(-1)}>
           {" "}
           &larr; Previous
@@ -79,7 +84,8 @@ function Option({ option, checked, handleSelectOption }) {
         <input
           type="radio"
           checked={checked}
-          onClick={() => handleSelectOption(option?.oNo)}
+          onChange={() => handleSelectOption(option?.oNo)}
+          className="radio"
         />
         {option.text}
       </span>
