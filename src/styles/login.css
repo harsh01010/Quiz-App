@@ -1,0 +1,60 @@
+form {
+    background-color: #f6f6f6;
+    /* height: 400px; */
+    display: flex;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    height: 300px;
+    margin: auto;
+    margin-top: 100px;
+    font-weight: 200;
+    font-size: large;
+
+}
+
+.inp {
+    height: 40px;
+    width: 200px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    font-size: large;
+    padding: 4px;
+    margin-right: 5px;
+
+}
+
+.wrapper {
+    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+}
+
+.btn {
+    font-size: large;
+    font-weight: bold;
+    height: 40px;
+    border: 1px solid white;
+    margin-left: 30%;
+    cursor: pointer;
+    transition: all 0.8s;
+}
+
+.btn:hover {
+    background-color: #8a6d3b;
+    color: #fff;
+    transform: scale(1.08);
+}
+
+.btn:active {
+    box-shadow: 0 0 20px black;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
