@@ -3,6 +3,7 @@ import "./App.css";
 import Login from "./components/Login";
 import Exam from "./components/Exam";
 import questions from "./components/questions";
+import Result from "./components/Result";
 
 function App() {
   const [userName, setUserName] = useState("");
@@ -13,28 +14,34 @@ function App() {
       qNo: question.qNo,
       solved: false,
       pScore: question.marks.positive,
-      nScore: question.marks.negative,
+      nScore: -question.marks.negative,
       selectedOption: null,
       score: 0,
     }));
   });
+  const [showResult, setShowResult] = useState(false);
 
   return (
     <>
-      {showExam ? (
-        <Exam
-          questions={questions}
-          setAnswers={setAnswers}
-          answers={answers}
-        ></Exam>
+      {!showResult ? (
+        showExam ? (
+          <Exam
+            questions={questions}
+            setAnswers={setAnswers}
+            answers={answers}
+            setShowResult={setShowResult}
+          ></Exam>
+        ) : (
+          <Login
+            userName={userName}
+            setUserName={setUserName}
+            passWord={passWord}
+            setPassWord={setPassWord}
+            setShowExam={setShowExam}
+          ></Login>
+        )
       ) : (
-        <Login
-          userName={userName}
-          setUserName={setUserName}
-          passWord={passWord}
-          setPassWord={setPassWord}
-          setShowExam={setShowExam}
-        ></Login>
+        <Result answers={answers} />
       )}
     </>
   );

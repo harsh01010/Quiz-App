@@ -2,7 +2,7 @@ import Question from "./Question";
 import Navigation from "./Navigation";
 import { useState } from "react";
 import "../styles/exam.css";
-function Exam({ questions, setAnswers, answers }) {
+function Exam({ questions, setAnswers, answers, setShowResult }) {
   const [selectedQuestion, setSelectedQuestion] = useState(0);
   function handleNextPrev(x) {
     setSelectedQuestion((curr) => curr + x);
@@ -20,6 +20,7 @@ function Exam({ questions, setAnswers, answers }) {
         answers={answers}
         selectedQuestion={selectedQuestion}
         setSelectedQuestion={setSelectedQuestion}
+        setShowResult={setShowResult}
       />
     </div>
   );

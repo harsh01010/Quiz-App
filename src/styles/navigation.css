@@ -32,5 +32,43 @@
     gap: 40px;
     margin: auto;
     margin-top: 0px;
-    overflow: auto;
+    height: 90vh;
+    padding-right: 10px;
+    overflow-y: scroll;
+}
+
+.submitBtn {
+    height: 50px;
+    position: fixed;
+    bottom: 5px;
+    right: 0;
+    z-index: 20;
+}
+
+/* Customize the scrollbar */
+.navigation::-webkit-scrollbar {
+    width: 12px;
+    /* Set the width of the scrollbar */
+}
+
+.navigation::-webkit-scrollbar-thumb {
+    background-color: #888;
+    /* Set the color of the scrollbar thumb */
+    border-radius: 6px;
+    /* Set the border radius of the scrollbar thumb */
+}
+
+.navigation::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+    /* Set the color of the scrollbar thumb on hover */
+}
+
+.navigation::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    /* Set the color of the scrollbar track */
+}
+
+.navigation::-webkit-scrollbar-track:hover {
+    background-color: #ddd;
+    /* Set the color of the scrollbar track on hover */
 }
